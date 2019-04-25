@@ -11,7 +11,7 @@ export NNVM_EXEC_MATCH_RANGE=1
 unset MXNET_SUBGRAPH_BACKEND
 
 echo "=========image classification=========="
-cd ./example/quantization
+cd ./incubator-mxnet/example/quantization
 echo "=============resnet50_v1==============="
 python imagenet_gen_qsym_mkldnn.py --model=resnet50_v1 --num-calib-batches=5 --calib-mode=naive
 python imagenet_inference.py --symbol-file=./model/resnet50_v1-symbol.json --batch-size=64 --num-inference-batches=500 --ctx=cpu --benchmark=True
